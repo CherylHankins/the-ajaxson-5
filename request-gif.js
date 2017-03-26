@@ -12,6 +12,16 @@ $(document).ready(function() {
  *
  * upon receiving a response from Giphy, updates the DOM to display the new GIF
  */
+//function validateForm(event) {
+    //var valid = $("#riddle").val();
+    //console.log(valid);
+    //if (valid == "5") {
+        //(fetchAndDisplayGif());
+    //}
+    //else {
+        //console.log("NO GIF");
+    //}
+//}
 function fetchAndDisplayGif(event) {
 
     // This prevents the form submission from doing what it normally does: send a request (which would cause our page to refresh).
@@ -22,6 +32,10 @@ function fetchAndDisplayGif(event) {
      // TODO should be e.g. "dance"
     var searchQuery = $("#typeOfGif").val();
     console.log(searchQuery);
+
+    //if (valid != "5");
+        //error.innerHTML = "%%%%";
+
     // configure a few parameters to attach to our request
     var params = {
         api_key: "dc6zaTOxFJmzC",
@@ -60,7 +74,6 @@ function fetchAndDisplayGif(event) {
     // TODO
     // give the user a "Loading..." message while they wait
     //$("#loader").toggle();
-
     // see line 30 and 49
 }
 
