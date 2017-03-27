@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
-    $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
+    $("#form-gif-request").submit(validateForm); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
 });
 
 
@@ -12,29 +12,40 @@ $(document).ready(function() {
  *
  * upon receiving a response from Giphy, updates the DOM to display the new GIF
  */
-//function validateForm(event) {
-    //var valid = $("#riddle").val();
-    //console.log(valid);
+function validateForm(event) {
+    event.preventDefault();
+    var valid = $("#riddle").val();
+    console.log(valid);
+    if (valid != "5") {
+        console.log("NO GIF");
+        error.innerHTML = "No gifs for you.";
+    }
+    else {
+        (fetchAndDisplayGif());
+    }
+
     //if (valid == "5") {
         //(fetchAndDisplayGif());
     //}
     //else {
         //console.log("NO GIF");
+        //error.innerHTML = "No gifs for you.";
     //}
-//}
+}
 function fetchAndDisplayGif(event) {
 
     // This prevents the form submission from doing what it normally does: send a request (which would cause our page to refresh).
     // Because we will be making our own AJAX request, we dont need to send a normal request and we definitely don't want the page to refresh.
-    event.preventDefault();
+    //event.preventDefault();
 
     // get the user's input text from the DOM
      // TODO should be e.g. "dance"
     var searchQuery = $("#typeOfGif").val();
     console.log(searchQuery);
-
-    //if (valid != "5");
-        //error.innerHTML = "%%%%";
+    //var valid = $("#riddle").val();
+    //console.log(valid);
+      //if (valid != 5);
+        //error.innerHTML = "No gifs for you.";
 
     // configure a few parameters to attach to our request
     var params = {
