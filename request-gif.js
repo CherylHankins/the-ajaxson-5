@@ -24,13 +24,7 @@ function validateForm(event) {
         (fetchAndDisplayGif());
     }
 
-    //if (valid == "5") {
-        //(fetchAndDisplayGif());
-    //}
-    //else {
-        //console.log("NO GIF");
-        //error.innerHTML = "No gifs for you.";
-    //}
+
 }
 function fetchAndDisplayGif(event) {
 
@@ -42,10 +36,6 @@ function fetchAndDisplayGif(event) {
      // TODO should be e.g. "dance"
     var searchQuery = $("#typeOfGif").val();
     console.log(searchQuery);
-    //var valid = $("#riddle").val();
-    //console.log(valid);
-      //if (valid != 5);
-        //error.innerHTML = "No gifs for you.";
 
     // configure a few parameters to attach to our request
     var params = {
